@@ -22,7 +22,7 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 现代、高效的设计
 * 开放的工业标准
 ========
-### 和 OpenGL 是不同的
+### 和 OpenGL 的不同
 * 设计哲学上本质的改变
 * 需要应用开发者做出相应改变
 ========
