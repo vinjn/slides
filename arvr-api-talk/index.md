@@ -4,19 +4,21 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ### Vulkan
 * Vulkan 介绍
 * 为什么重新造轮子？
-* How
+* 开放的生态圈
+* 展望未来
+* Q & A
 ========
 ### What is Vulkan?
 ![](media/vulkan-icon.png)
 ========
-### 背景故事
+### 背景
 * 2012 年 10 月，成立 GL Common TSG 重新设计 OpenGL / ES。
 * 2014 年 6 月，项目重启，改名为 GL Next，高优先级。
 * 2015 年 GDC，重命名为 Vulkan。
 * 2015 年 2 月，正式发布。
 ========
 ### Vulkan 是为今后 20 年准备的图形 API
-* 逻辑上，是 OpenGl / OpenGL ES 的后继者
+* 是 OpenGl / OpenGL ES 的替代者
 * 现代、高效的设计
 * 开放的工业标准
 ========
@@ -136,18 +138,19 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * https://github.com/vinjn/vkut
 * The Vulkan Utility Toolkit
 ========
-### Vulkan 对 AR 应用的帮助
+### Vulkan 对未来 AR 应用的帮助
+* 省电
 * 支持 Compute Shader，可以进行计算机视觉运算
 * OpenCV CUDA / OpenCL 模块 -> Vulkan 模块
 * 支持异步计算（Async Compute)，充分榨干 GPU 性能
-* 省电
 ========
-### Vulkan 对 VR 应用的帮助
+### Vulkan 对未来 VR 应用的帮助
+* 省电
 * 稳定的帧率、可预测的性能确保流程的 VR 体验
 * 多线程的引入使得同屏 drawcall 更多
-* 省电
+* Android N 引入 Daydream 和 Vulkan 
 ========
-### 你是否应该使用 Vulkan?
+### 展望未来，你是否应该使用 Vulkan?
 * 挑战
 * 机遇
 * 现实
@@ -172,4 +175,6 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ========
 ### Vulkan vs DirectX12 vs Metal
 ![](media/api-platform-support.png)
-
+========
+## Q & A
+> http://vinjn.github.io/slides/
