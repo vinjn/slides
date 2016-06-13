@@ -1,7 +1,7 @@
 ## 浅析 Vulkan 对 AR / VR 的影响
 Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com/people/vinjn) / [mail](mailto:vinjn.z@gmail.com)
 ========
-### Vulkan
+### 议程
 * Vulkan 介绍
 * 为什么重新造轮子？
 * 开放的生态圈
