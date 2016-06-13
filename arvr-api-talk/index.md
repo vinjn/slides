@@ -82,7 +82,7 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 甚至基于猜测，无视你的命令
 ========
 ### Vulkan 的编程模型（简化版）
-* Instace
+* Instance
     * PhysicalDevice
         * Device
             * Resources (Image, Buffer)
