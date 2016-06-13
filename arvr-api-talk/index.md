@@ -8,14 +8,14 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 展望未来
 * Q & A
 ========
-### What is Vulkan?
+### Vulkan 介绍
 ![](media/vulkan-icon.png)
 ========
-### 背景
-* 2012 年 10 月，成立 GL Common TSG 重新设计 OpenGL / ES。
-* 2014 年 6 月，项目重启，改名为 GL Next，高优先级。
-* 2015 年 GDC，重命名为 Vulkan。
-* 2015 年 2 月，正式发布。
+### 成立的背景
+* 2012 年 10 月，成立 GL Common TSG 重新设计 GL / ES，不了了之
+* 2014 年 6 月，项目重启，改名为 GL Next，提升优先级
+* 2015 年 GDC，重命名为 Vulkan
+* 2015 年 2 月，正式发布
 ========
 ### Vulkan 是为今后 20 年准备的图形 API
 * 是 OpenGl / OpenGL ES 的替代者
@@ -37,27 +37,27 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ### GPU 被用于各种领域（图像、计算、视觉、深度学习等等）
 ![](media/gpu-everywhere.png)
 ========
-### 问题1. OpenGL 编程模型与 GPU 硬件不一致
+### 问题 1：OpenGL 编程模型与 GPU 硬件不一致
 * 尤其在移动端
 * 被驱动的黑魔法隐藏
 ========
-### 问题2. 驱动工作量过大
+### 问题 2：驱动工作量过大
 * 大量的状态检验
 * 资源依赖跟踪
 ========
-### 问题3. 驱动不稳定
+### 问题 3： 驱动不稳定
 * 逻辑复杂
 * 大量 bug
 * 难以预测的行为
 * 每个 GPU 都有不同的 bug
 * 每个 GPU 都有自己推荐的编程方式
 ========
-### 问题4. 单线程
+### 问题 4： 单线程
 * 需要创建 context
 * context 需要和线程绑定
 * 无法高效利用多核 CPU
 ========
-### 对硬件的直接控制
+### 解决方案：对硬件的直接控制
 * 你需要做什么？
 * 驱动会做什么?
 ========
@@ -79,7 +79,7 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ### OpenGL 驱动则
 * 会延迟工作
 * 将工作转移给另一个线程
-* 甚至基于它对你对猜测，无视你的命令
+* 甚至基于猜测，无视你的命令
 ========
 ### Vulkan 的编程模型（简化版）
 * Instace
@@ -93,6 +93,14 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ### Queue, Command Buffer
 ![](media/vulkan-threading.png)
 ========
+### Vulkan 的生态圈是开放的
+* [https://github.com/KhronosGroup](https://github.com/KhronosGroup)
+* Loader
+* Validation layer
+* SPIR-V 工具
+* Conformance 测试集
+* Specification
+========
 ### Vulkan 工作组成员
 ![](media/vk-who.png)
 ========
@@ -102,14 +110,6 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 引擎和工具开发商
 * 平台
 * 内容提供商
-========
-### Vulkan 的生态圈是开放的
-* [https://github.com/KhronosGroup](https://github.com/KhronosGroup)
-* Loader
-* Validation layer
-* SPIR-V 工具
-* Conformance 测试集
-* Specification
 ========
 ### 我对生态圈的贡献
 * vktrace
@@ -123,7 +123,7 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ========
 ### awesome-vulkan
 * https://github.com/vinjn/awesome-vulkan
-* 整理互联网上关于 Vulkan 的（几乎）所有公开资源。
+* 收集互联网上有关 Vulkan 的（几乎）所有公开资源：
     * Hardware Support
     * SDK
     * IHV Document
@@ -146,9 +146,9 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ========
 ### Vulkan 对未来 VR 应用的帮助
 * 省电
-* 稳定的帧率、可预测的性能确保流程的 VR 体验
+* 稳定的帧率、可预测的性能确保流畅的 VR 体验
 * 多线程的引入使得同屏 drawcall 更多
-* Android N 引入 Daydream 和 Vulkan 
+* Android N 引入 Daydream 和 Vulkan，标志着 Vulkan 将应用在安卓 VR 中 
 ========
 ### 展望未来，你是否应该使用 Vulkan?
 * 挑战
@@ -156,9 +156,9 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 现实
 ========
 ### 挑战
-* 啰嗦而复杂的编程方式
+* 啰嗦、复杂的编程方式
 * 容易伤到自己
-* 需要学习一堆新知识
+* 需要重新学习知识
 ========
 ### 机遇
 * 驱动的负担更轻
