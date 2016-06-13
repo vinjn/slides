@@ -1,4 +1,4 @@
-## 浅析 Vulkan 对 AR / VR 的影响
+## 新一代图形API Vulkan 对 AR、VR 的影响
 Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com/people/vinjn) / [mail](mailto:vinjn.z@gmail.com)
 ========
 ### 议程
