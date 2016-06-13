@@ -177,4 +177,4 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ![](media/api-platform-support.png)
 ========
 ## Q & A
-> http://vinjn.github.io/slides/
+> https://github.com/vinjn/slides
