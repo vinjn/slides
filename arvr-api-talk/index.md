@@ -18,7 +18,7 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 2015 年 2 月，正式发布
 ========
 ### Vulkan 是为今后 20 年准备的图形 API
-* 是 OpenGl / OpenGL ES 的替代者
+* 是 OpenGL / OpenGL ES 的替代者
 * 现代、高效的设计
 * 开放的工业标准
 ========
