@@ -70,7 +70,7 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ### OpenGL 则允许你
 * 在任意时间提供重要信息
 * 在任意时间改变这些信息
-* 方便，但是严重影像 GPU 性能
+* 方便，但是严重影响 GPU 性能
 ========
 ### 相应的，Vulkan 驱动保证会
 * 在你让它工作时
