@@ -62,7 +62,7 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 驱动会做什么?
 ========
 ### 你需要
-* 在何时的时间
+* 在合适的时间
 * 告诉 Vulkan 驱动你打算做什么
 * 提供足够的细节
 * 驱动不需要猜测
