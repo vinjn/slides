@@ -15,7 +15,7 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 2012 年 10 月，成立 GL Common TSG 重新设计 GL / ES，不了了之
 * 2014 年 6 月，项目重启，改名为 GL Next，提升优先级
 * 2015 年 GDC，重命名为 Vulkan
-* 2015 年 2 月，正式发布
+* 2016 年 2 月，正式发布
 ========
 ### Vulkan 是为今后 20 年准备的图形 API
 * 是 OpenGL / OpenGL ES 的替代者
