@@ -1,8 +1,12 @@
 ## 新一代图形API Vulkan 对行业的影响
-Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com/people/vinjn) / [mail](mailto:vinjn.z@gmail.com)
+Vinjn张静
 ========
-### readme.txt
-
+### README
+* GPU 架构师 / Lead @ NVIDIA 上海
+* 负责 OpenGL / Vulkan 性能分析工具
+* 游戏行业经验（2K Games、Ubisoft、微软 Xbox 部门）
+* 技术书籍译者
+* [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com/people/vinjn) / [mail](mailto:vinjn.z@gmail.com)
 ========
 ### 议程
 * Vulkan 介绍
@@ -21,24 +25,24 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 * 2016 年 2 月，正式发布
 ========
 ### Vulkan 是为今后 20 年准备的图形 API
-* 是 OpenGL / OpenGL ES 的替代者
+* 是 OpenGL / ES 的替代者
 * 现代、高效的设计
 * 开放的工业标准
 ========
-### 和 OpenGL 的不同
-* 设计哲学上本质的改变
-* 需要应用开发者做出相应改变
-========
-### 为什么重新造轮子，OpenGL 出了什么问题？
-========
-### 25 年前 OpenGL 被发明了
+#### OpenGL 被发明于 25 年前
+#### 昂贵的工作站
+#### 单核 CPU
 ![](media/gpu-server.png)
 ========
-### GPU 逐渐移动化、多核化
+#### GPU 逐渐移动化、多核化
 ![](media/gpu-mobile.png)
 ========
-### GPU 被用于各种领域（图像、计算、视觉、深度学习等等）
+#### GPU 被用于各种领域
+#### 无人机、计算机视觉、汽车、深度学习等
 ![](media/gpu-everywhere.png)
+========
+### 为什么重新造轮子？
+### OpenGL 出了什么问题？
 ========
 ### 问题 1：OpenGL 编程模型与 GPU 硬件不一致
 * 尤其在移动端
@@ -95,52 +99,6 @@ Vinjn张静 [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com
 ========
 ### Queue, Command Buffer
 ![](media/vulkan-threading.png)
-========
-### Vulkan 的生态圈是开放的
-* [https://github.com/KhronosGroup](https://github.com/KhronosGroup)
-* Loader
-* Validation layer
-* SPIR-V 工具
-* Conformance 测试集
-* Specification
-========
-### Vulkan 工作组成员
-![](media/vk-who.png)
-========
-### 整个行业的努力
-* GPU 和 SoC 供应商
-* 游戏开发商
-* 引擎和工具开发商
-* 平台
-* 内容提供商
-========
-### 我对生态圈的贡献
-* vktrace
-* awesome-vulkan
-* vkut
-========
-### vktrace
-* https://github.com/LunarG/VulkanTools/tree/master/vktrace
-* Vktrace Trace and Replay Tool
-* Vktrace is a Vulkan API tracer for graphics applications.
-========
-### awesome-vulkan
-* https://github.com/vinjn/awesome-vulkan
-* 收集互联网上有关 Vulkan 的（几乎）所有公开资源：
-    * Hardware Support
-    * SDK
-    * IHV Document
-    * Tutorial
-    * Apps
-    * Samples
-    * Libraries
-    * Bindings
-    * Tools
-========
-### vkut
-* https://github.com/vinjn/vkut
-* The Vulkan Utility Toolkit
-========
 ### Vulkan 对未来 AR 应用的帮助
 * 省电
 * 支持 Compute Shader，可以进行计算机视觉运算
