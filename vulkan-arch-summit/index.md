@@ -78,7 +78,7 @@ Vinjn张静
 * 将工作转移给另一个线程
 * 甚至基于猜测，无视你的命令
 ========
-### 答案：通过 Vulkan 实现对硬件的直接控制，你只需要
+### 答案：通过 Vulkan 实现对硬件的直接控制
 * 在合适的时间
 * 告诉 Vulkan 驱动你打算做什么
 * 提供足够的细节
@@ -97,7 +97,7 @@ Vinjn张静
 * TODO: 需展开
 ![](media/vulkan-threading.png)
 ========
-### Vulkan 对未来 AR、VR、游戏应用的帮助
+### Vulkan 对 AR、VR、游戏的帮助
 * 支持 Compute Shader，可以进行计算机视觉运算
 * 支持异步计算（Async Compute)，充分榨干 GPU 性能
 * 多线程的引入使得同屏 drawcall 更多
