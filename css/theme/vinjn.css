@@ -8,13 +8,12 @@
 /*@import url(../../lib/font/league-gothic/league-gothic.css);*/
 /*@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);*/
 /*$mainColor: #000;*/
-/*$headingColor: #383D3D;
-$headingTextShadow: none;
-$headingTextTransform: none;
-$backgroundColor: #F0F1EB;
-$linkColor: #51483D;
-$linkColorHover: lighten( $linkColor, 20% );
-$selectionBackgroundColor: #26351C;*/
+/*$headingColor: #383D3D;*/
+/*$headingTextShadow: none;*/
+/*$backgroundColor: #F0F1EB;*/
+/*$linkColor: #51483D;*/
+/*$linkColorHover: lighten( $linkColor, 20% );*/
+/*$selectionBackgroundColor: #26351C;*/
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -59,7 +58,7 @@ body {
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
   word-wrap: break-word; }
 
