@@ -1,122 +1,169 @@
-## 新一代图形API Vulkan 对行业的影响
-Vinjn张静
+## 次世代图形接口 Vulkan 对行业的影响
+
+张静  
+GPU 架构师 @ NVIDIA
 ========
 ### README
-* GPU 架构师 / Lead @ NVIDIA 上海
-* 负责 OpenGL / Vulkan 性能分析工具
-* 游戏行业经验（2K Games、Ubisoft、微软 Xbox 部门）
-* 技术书籍译者
-* [@github](https://github.com/vinjn) / [@zhihu](https://www.zhihu.com/people/vinjn) / [mail](mailto:vinjn.z@gmail.com)
+* @ NVIDIA 上海
+* 负责硬件部门的 OpenGL / Vulkan 性能分析工具
+* 游戏行业经验
+ * 2K Games
+ * Ubisoft
+ * 微软 Xbox 部门
+* 译者
+ * OpenCV 2 计算机视觉编程手册
+ * Processing 语言权威指南
+* 联系方式
+ * https://github.com/vinjn
+ * https://www.zhihu.com/people/vinjn
+ * vinjn.z@gmail.com
 ========
 ### 议程
-* Vulkan 介绍
+* Vulkan 是什么？
 * 为什么重新造轮子？
-* 优点
-* 展望未来
+* 对特定应用的优化
+* 是否需要用 Vulkan？
 * Q & A
 ========
-### Vulkan 介绍
-![](media/vulkan-icon.png)
+![](media/vulkan-khronos.png)
 ========
-### 成立的背景
-* 2012 年 10 月，成立 GL Common TSG 重新设计 GL / ES，不了了之
-* 2014 年 6 月，项目重启，改名为 GL Next，提升优先级
-* 2015 年 GDC，重命名为 Vulkan
-* 2016 年 2 月，正式发布
-========
-### Vulkan 是为今后 20 年准备的图形 API
+### Vulkan 是为今后 20 年准备的图形接口
 * 是 OpenGL / ES 的替代者
 * 现代、高效的设计
 * 开放的工业标准
+* 跨平台（除了苹果系统……）
 ========
-#### OpenGL 被发明于 25 年前
-#### 昂贵的工作站
-#### 单核 CPU
-![](media/gpu-server.png)
+### 成立的背景
+* 2012 年，Khronos 成立项目组重新设计 OpenGL
+* 2014 年，项目提升优先级，重启为 GL Next
+* 2015 年 GDC，对外命名为 Vulkan
+* 2016 年 GDC，正式发布
+ * 得到硬件厂商支持
+ * 得到游戏厂商支持
+ * 得到工具厂商支持
 ========
-#### GPU 逐渐移动化、多核化
+![](media/vk-who.png)
+
+ > Google, Nintendo, PIXAR, Oculus VR, Valve, EA, Blizzard
+========
+![](media/talos.jpg)
+
+The Talos Principle
+========
+![](media/dota2.jpg)
+
+Dota2
+========
+![](media/doom.jpg)
+Doom
+========
+### 回顾下 OpenGL 的历史
+========
+![](media/SGI_O2.jpg)
+
+OpenGL 被发明于 25 年前，用于昂贵的图形工作站中。
+
+========
 ![](media/gpu-mobile.png)
+
+近年来移动 GPU 的兴起，多核 CPU 成为常态。
+
 ========
-#### GPU 被用于各种领域
-#### 无人机、计算机视觉、汽车、深度学习等
 ![](media/gpu-everywhere.png)
+
+GPU 被用于图形以外的领域，无人机、计算机视觉、汽车、深度学习等。
 ========
-### 为什么重新造轮子？
-### OpenGL 出了什么问题？
+# OGL 出了什么问题？
 ========
-### 问题：OpenGL 编程模型与 GPU 硬件不一致
-* 尤其在移动端
-* 被驱动的黑魔法隐藏
+### 问题 一：OpenGL 编程模型与 GPU 硬件不一致
 ========
-### 答案: Vulkan 的编程模型接近硬件实现
-* Instance
-    * PhysicalDevice
-        * Device
-            * Resources (Image, Buffer)
-            * Memory
-            * Queue
-            * Command Buffer
+### 解决方法，Vulkan 的编程模型接近硬件实现
+![](media/vulkan-in-one.png)
 ========
-### OpenGL 和 Vulkan 编程模型上的区别
-* TODO: 需展开
-* Texture
-* Buffer
-* shader
+![](media/vulkan-programming-model.png)
 ========
-### 问题：驱动工作量过大，不稳定
-* 大量的状态检验
-* 资源依赖跟踪
-* 难以预测的行为
+### 问题 二：驱动工作量过大，行为难以预测
 ========
-### 原因：OpenGL 允许你
-* 在任意时间提供重要信息
-* 在任意时间改变这些信息
-* 方便，严重影响 GPU 性能
+### 原因在于
+* OpenGL 开发者
+	* 在任意时间提供重要信息
+	* 在任意时间改变这些信息
+	* 对 GPU 不友好
+* OpenGL 驱动
+	* 会延迟工作，将工作转移给另一个线程
+	* 甚至基于猜测，无视开发者的命令
+	* 为了满足灵活性，增加大量的状态检验
+	* 跟踪资源之间的依赖
 ========
-### OpenGL 驱动则
-* 会延迟工作
-* 将工作转移给另一个线程
-* 甚至基于猜测，无视你的命令
+### 解决方法
+* 开发者通过 Vulkan 实现对硬件的直接控制
+	* 在合适的时间
+	* 告诉驱动打算做什么
+	* 提供足够的细节
+* Vulkan 驱动会
+	* 在你让它工作时
+	* 做该做的事情
+	* 不做猜测，猜测 ＝ 浪费
 ========
-### 答案：通过 Vulkan 实现对硬件的直接控制
-* 在合适的时间
-* 告诉 Vulkan 驱动你打算做什么
-* 提供足够的细节
+![](media/explicit-control.png)
 ========
-### Vulkan 驱动会
-* 在你让它工作时
-* 做该做的事情
-* 不需要猜测
+### 举例：OpenGL 的状态机被 PSO 取代
+* OpenGL 中的状态改变是全局的，在 Vulkan 中被 Pipeline State Object（PSO）替代
+	* 强迫你提前准备渲染的状态
+	* 你的工作量上去了
+	* 驱动的工作量降低了，更好优化、更快
+* OpenGL
+```C++
+// 可随时随地修改渲染状态
+glPolygonMode(GL_FRONT_AND_BACK, GL_LINE/GL_FILL);
+```
+* Vulkan
+```C++
+// 预先创建两个 PSO 对象
+vkCreateGraphicsPipelines(...&pipelineCreateInfo, ..., &pipelines.solid);
+rasterizationState.polygonMode = VK_POLYGON_MODE_LINE;
+vkCreateGraphicsPipelines(...&pipelineCreateInfo, ..., &pipelines.wireFrame);
+// 之后方可通过 PSO 来设置渲染状态
+vkBeginCommandBuffer();
+vkCmdBindPipeline(...&pipelines.active...);
+vkEndCommandBuffer();
+```
 ========
-### 问题： 单线程
-* 需要创建 context
-* context 需要和线程绑定
+### 问题 三： OpenGL 对多线程不友好
+* 需要创建 GL Context
+* Context 需要和线程绑定
 * 无法高效利用多核 CPU
 ========
 ### 答案：Queue, Command Buffer
-* TODO: 需展开
+========
 ![](media/vulkan-threading.png)
 ========
-### Vulkan 对 AR、VR、游戏的帮助
+![](media/threading-issue.png)
+========
+![](media/threading-developer.png)
+========
+![](media/threading-solution.png)
+========
+### Vulkan 对特定应用的优化
 * 支持 Compute Shader，可以进行计算机视觉运算
-* 支持异步计算（Async Compute)，充分榨干 GPU 性能
-* 多线程的引入使得同屏 drawcall 更多
+* 支持异步计算 (Async Compute)，充分榨干 GPU 性能
 * Android N 引入 Daydream 和 Vulkan，标志着 Vulkan 将应用在安卓 VR 中 
 ========
 ### 省电，CPU 端工作量减少
-* TODO: 需展开
 * 驱动工作量减少
+	* 减少错误检查
+	* 减少资源跟踪
+* 多线程，充分利用 cpu 时间
 ========
-### 稳定的帧率、可预测的性能确保流畅的 VR 体验
-* TODO: 需展开
+### 稳定的帧率、可预测的性能，确保流畅的 VR 体验
+* 多线程的引入使得同屏 drawcall 更多
+* 复用 command buffer
+* 驱动不会猜测你的行为
 ========
-### 展望未来，你是否应该使用 Vulkan?
-* 挑战
-* 机遇
-* 现实
+# 是否需要用 Vulkan?
 ========
 ### 挑战
-* 啰嗦、复杂的编程方式
+* 复杂的编程方式
 * 容易伤到自己
 * 需要重新学习知识
 ========
@@ -129,12 +176,27 @@ Vinjn张静
 ### 现实
 * 生态圈还不如 OpenGL 成熟
 * 短时间内依然需要发布 GL / DX 版本
+* 行业趋势
+	* Apple - Metal
+	* Android - Vulkan
+	* Windows - DirectX 12
+	* 传统应用 - OpenGL
 ========
-### Vulkan vs OpenGL / ES
 ![](media/gl-to-new-api.png)
+
+Vulkan vs OpenGL / ES
 ========
-### Vulkan vs DirectX12 vs Metal
 ![](media/api-platform-support.png)
+
+Vulkan vs DirectX12 vs Metal
 ========
-## Q & A
+![](media/vulkan-icon.png)
+
+Thanks
+========
+#### 微信公众号“黑客与画家”
+#### 关注游戏开发、计算机视觉、图形学、虚拟现实等。
+![](media/wechat-qr.jpg)
 > https://github.com/vinjn/slides
+
+
