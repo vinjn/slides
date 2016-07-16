@@ -80,7 +80,7 @@ OpenGL 被发明于 25 年前，用于昂贵的图形工作站中。
 GPU 甚至被用于图形以外的领域，无人机、计算机视觉、汽车、深度学习等，OpenGL 无能为力。
 
 ========
-### 解决方法 － Vulkan 使用接近硬件的编程模型
+### 解决方法：Vulkan 使用接近硬件的编程模型
 ![](media/vulkan-in-one.png)
 ========
 ![](media/vulkan-programming-model.png)
@@ -137,7 +137,7 @@ vkEndCommandBuffer();
 * Context 需要和线程绑定
 * 无法高效利用多核 CPU
 ========
-### 解决方法 － Queue, Command Buffer
+### 解决方法：Queue, Command Buffer
 * 所有对象对任何线程都可见，没有 Thread-local storage（TLS）
 * 比如：Command Buffer 的录制可以在任意线程进行，不需要绑定 Context
 * 多线程的对象同步成为开发者的职责
