@@ -17,6 +17,7 @@ GPU 架构师 @ NVIDIA
  * https://github.com/vinjn
  * https://www.zhihu.com/people/vinjn
  * vinjn.z@gmail.com
+ * 知乎专栏 / 微信订阅号：黑客与画家
 ========
 ### 议程
 * Vulkan 是什么？
@@ -34,17 +35,17 @@ GPU 架构师 @ NVIDIA
 * 跨平台（除了苹果系统……）
 ========
 ### 成立的背景
-* 2012 年，Khronos 成立项目组重新设计 OpenGL
-* 2014 年，项目提升优先级，重启为 GL Next
-* 2015 年 GDC，对外命名为 Vulkan
-* 2016 年 GDC，正式发布
+* 2012 年，Khronos 成立项目组重新设计 OpenGL，不了了之
+* 2014 年，项目提升至最高优先级，重启为 GL Next
+* 2015 年 GDC，首次对外公开项目细节
+* 2016 年 GDC，发布 1.0
  * 得到硬件厂商支持
  * 得到游戏厂商支持
  * 得到工具厂商支持
 ========
 ![](media/vk-who.png)
 
- > Google, Nintendo, PIXAR, Oculus VR, Valve, EA, Blizzard
+ > 新面孔：Google, Nintendo, PIXAR, Oculus VR, Valve, EA, Blizzard
 ========
 ![](media/talos.jpg)
 
@@ -56,6 +57,8 @@ Dota2
 ========
 ![](media/doom.jpg)
 Doom
+========
+### 问题 一：OpenGL 编程模型与 GPU 硬件不一致
 ========
 # OGL 出了什么问题？
 ========
@@ -75,9 +78,7 @@ OpenGL 被发明于 25 年前，用于昂贵的图形工作站中。
 
 GPU 被用于图形以外的领域，无人机、计算机视觉、汽车、深度学习等。
 ========
-### 问题 一：OpenGL 编程模型与 GPU 硬件不一致
-========
-### 解决方法，Vulkan 的编程模型接近硬件实现
+### 解决方法，Vulkan 使用接近硬件的编程模型
 ![](media/vulkan-in-one.png)
 ========
 ![](media/vulkan-programming-model.png)
@@ -135,6 +136,9 @@ vkEndCommandBuffer();
 * 无法高效利用多核 CPU
 ========
 ### 答案：Queue, Command Buffer
+* 所有对象对任何线程都可见，没有 Thread-local storage（TLS）
+* 比如：Command Buffer 的录制可以在任意线程进行，不需要绑定 Context
+* 多线程的对象同步成为开发者的职责
 ========
 ![](media/vulkan-threading.png)
 ========
@@ -153,7 +157,7 @@ vkEndCommandBuffer();
 * 驱动工作量减少
 	* 减少错误检查
 	* 减少资源跟踪
-* 多线程，充分利用 cpu 时间
+* 多线程，充分利用 CPU 时间
 ========
 ### 稳定的帧率、可预测的性能，确保流畅的 VR 体验
 * 多线程的引入使得同屏 drawcall 更多
@@ -167,11 +171,20 @@ vkEndCommandBuffer();
 * 容易伤到自己
 * 需要重新学习知识
 ========
+![](media/shoule-i-use-vulkan.png)
+
+！并不是所有 OpenGL 应用都需要转成 Vulkan！
+
+========
 ### 机遇
-* 驱动的负担更轻
+* 通过让开发者做更多工作，让硬件做更多工作
 * 可以通过多线程进一步降低
 * 可预测的性能
 * 对移动端友好
+* 可以参与到开放的社区中
+========
+![](media/github-ecosystem.png)
+
 ========
 ### 现实
 * 生态圈还不如 OpenGL 成熟
