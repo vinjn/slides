@@ -137,6 +137,10 @@ vkEndCommandBuffer();
 * Context 需要和线程绑定
 * 无法高效利用多核 CPU
 ========
+![](media/threading-issue.png)
+========
+![](media/threading-developer.png)
+========
 ### 解决方法：Queue, Command Buffer
 * 所有对象对任何线程都可见，没有 Thread-local storage（TLS）
 * 比如：Command Buffer 的录制可以在任意线程进行，不需要绑定 Context
@@ -145,12 +149,6 @@ vkEndCommandBuffer();
 	* General，默认
 	* Compute，异步 计算
 	* DMA, 异步 copy
-========
-![](media/vulkan-threading.png)
-========
-![](media/threading-issue.png)
-========
-![](media/threading-developer.png)
 ========
 ![](media/threading-solution.png)
 ========
@@ -161,8 +159,9 @@ vkEndCommandBuffer();
 ========
 ### 省电，CPU 端工作量减少
 * 驱动工作量减少
-	* 减少错误检查
-	* 减少资源跟踪
+	* 减少错误检查 -> 不做任何错误检查
+	* 减少资源跟踪 -> 开发者的职责
+	* 驱动得到极度优化
 * 多线程，充分利用 CPU 时间
 ========
 ### 稳定的帧率、可预测的性能，确保流畅的 VR 体验
@@ -179,7 +178,7 @@ vkEndCommandBuffer();
 ========
 ![](media/shoule-i-use-vulkan.png)
 
-！并不是所有 OpenGL 应用都需要转成 Vulkan！
+并不是所有 OpenGL 应用都需要转成 Vulkan！
 
 ========
 ### 机遇
