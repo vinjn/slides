@@ -19,14 +19,17 @@ GPU 架构师 @ NVIDIA
  * vinjn.z@gmail.com
  * 知乎专栏 / 微信订阅号：黑客与画家
 ========
-### 议程
+### 三个问题
 * Vulkan 是什么？
-* 为什么重新造轮子？
-* 对特定应用的优化
-* 是否需要用 Vulkan？
-* Q & A
+* Khronos 为什么重新造轮子？
+* 什么项目需要用 Vulkan？
 ========
 ![](media/vulkan-khronos.png)
+========
+![](media/opengl-next-vulkan.jpg)
+
+Vulkan - 德语中的火山 - 不是福尔康
+
 ========
 ### Vulkan 是为今后 20 年准备的图形接口
 * 是 OpenGL / ES 的替代者
@@ -58,11 +61,9 @@ Dota2
 ![](media/doom.jpg)
 Doom
 ========
-### 问题 一：OpenGL 编程模型与 GPU 硬件不一致
-========
 # OGL 出了什么问题？
 ========
-### 回顾下 OpenGL 的历史
+### 问题 一：OpenGL 编程模型与 GPU 硬件不一致
 ========
 ![](media/SGI_O2.jpg)
 
@@ -71,12 +72,13 @@ OpenGL 被发明于 25 年前，用于昂贵的图形工作站中。
 ========
 ![](media/gpu-mobile.png)
 
-近年来移动 GPU 的兴起，多核 CPU 成为常态。
+近年来移动 GPU 的兴起，多核 CPU 也成为常态，而 OpenGL 还是没变。
 
 ========
 ![](media/gpu-everywhere.png)
 
-GPU 被用于图形以外的领域，无人机、计算机视觉、汽车、深度学习等。
+GPU 甚至被用于图形以外的领域，无人机、计算机视觉、汽车、深度学习等，OpenGL 无能为力。
+
 ========
 ### 解决方法，Vulkan 使用接近硬件的编程模型
 ![](media/vulkan-in-one.png)
