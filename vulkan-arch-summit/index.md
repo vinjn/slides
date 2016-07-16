@@ -141,6 +141,10 @@ vkEndCommandBuffer();
 * 所有对象对任何线程都可见，没有 Thread-local storage（TLS）
 * 比如：Command Buffer 的录制可以在任意线程进行，不需要绑定 Context
 * 多线程的对象同步成为开发者的职责
+* 三种 Queue
+	* General，默认
+	* Compute，异步 计算
+	* DMA, 异步 copy
 ========
 ![](media/vulkan-threading.png)
 ========
