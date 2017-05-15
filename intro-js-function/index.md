@@ -1,4 +1,17 @@
-## var vz = function() {};
+## function() {};
+========
+```
+var vz = function() {
+	// I'm JS
+};
+vz();
+```
+```C++
+auto vz = []() {
+	// I'm C++11
+};
+vz();
+```
 ========
 ```
 function functionName(){
