@@ -1,7 +1,7 @@
 ## function() {};
 ========
 ### I have a name
-```
+```javascript
 var vz = function() {
 	// I'm JS
 };
@@ -15,7 +15,7 @@ vz();
 ```
 ========
 ### I don't have a name
-```
+```javascript
 (function() {
 	// I'm JS
 })();
@@ -27,7 +27,7 @@ vz();
 ```
 ========
 [FunctionNameExample01](Ch07/FunctionNameExample01.htm)
-```
+```javascript
 function functionName(){
     //noop
 }
@@ -37,7 +37,7 @@ alert(functionName.name); //"functionName"
 ```
 ========
 [FunctionDeclarationHoisting01](Ch07/FunctionDeclarationHoisting01.htm)
-```
+```javascript
 sayHi();
 function sayHi(){
     alert("Hi!");
@@ -45,7 +45,7 @@ function sayHi(){
 ```
 ========
 [FunctionDeclarationsErrorExample01](Ch07/FunctionDeclarationsErrorExample01.htm)
-```
+```javascript
 var condition = true;
 //never do this!
 if(condition){
@@ -60,7 +60,7 @@ if(condition){
 sayHi();```
 ========
 [RecursionExample01](Ch07/RecursionExample01.htm)
-```
+```javascript
 function factorial(num){
     if (num <= 1){
         return 1;
@@ -74,7 +74,7 @@ alert(anotherFactorial(4));  //error!
 ```
 ========
 [RecursionExample02](Ch07/RecursionExample02.htm)
-```
+```javascriptjavascript
 function factorial(num){
     if (num <= 1){
         return 1;
@@ -88,7 +88,7 @@ alert(anotherFactorial(4));  //24
 ```
 ========
 [ClosureExample01](Ch07/ClosureExample01.htm)
-```
+```javascript
 function createFunctions(){
     var result = new Array();
     
@@ -108,7 +108,7 @@ for (var i=0; i < funcs.length; i++){
 ```
 ========
 [ClosureExample02](Ch07/ClosureExample02.htm)
-```
+```javascript
 function createFunctions(){
     var result = new Array();
     
@@ -130,7 +130,7 @@ for (var i=0; i < funcs.length; i++){
 ```
 ========
 [ThisObjectExample01](Ch07/ThisObjectExample01.htm)
-```
+```javascript
 var name = "The Window";
 var object = {
     name : "My Object",
@@ -144,7 +144,7 @@ alert(object.getNameFunc()());  //"The Window"
 ```
 ========
 [ThisObjectExample02](Ch07/ThisObjectExample02.htm)
-```
+```javascript
 var name = "The Window";
 var object = {
     name : "My Object",
@@ -159,7 +159,7 @@ alert(object.getNameFunc()());  //"MyObject"
 ```
 ========
 [ThisObjectExample03](Ch07/ThisObjectExample03.htm)
-```
+```javascript
 var name = "The Window";
 var object = {
     name : "My Object",
