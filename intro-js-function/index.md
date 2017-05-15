@@ -74,7 +74,7 @@ alert(anotherFactorial(4));  //error!
 ```
 ========
 [RecursionExample02](Ch07/RecursionExample02.htm)
-```javascriptjavascript
+```javascript
 function factorial(num){
     if (num <= 1){
         return 1;
