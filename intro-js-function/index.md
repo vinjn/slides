@@ -1,5 +1,6 @@
 ## function() {};
 ========
+### I have a name
 ```
 var vz = function() {
 	// I'm JS
@@ -13,6 +14,19 @@ auto vz = []() {
 vz();
 ```
 ========
+### I don't have a name
+```
+(function() {
+	// I'm JS
+})();
+```
+```C++
+[]() {
+	// I'm C++11
+}();
+```
+========
+[FunctionNameExample01](Ch07/FunctionNameExample01.htm)
 ```
 function functionName(){
     //noop
@@ -21,16 +35,16 @@ function functionName(){
 //works only in Firefox, Safari, Chrome, and Opera
 alert(functionName.name); //"functionName"
 ```
-[FunctionNameExample01](Ch07/FunctionNameExample01.htm)
 ========
+[FunctionDeclarationHoisting01](Ch07/FunctionDeclarationHoisting01.htm)
 ```
 sayHi();
 function sayHi(){
     alert("Hi!");
 }
 ```
-[FunctionDeclarationHoisting01](Ch07/FunctionDeclarationHoisting01.htm)
 ========
+[FunctionDeclarationsErrorExample01](Ch07/FunctionDeclarationsErrorExample01.htm)
 ```
 var condition = true;
 //never do this!
@@ -44,8 +58,8 @@ if(condition){
     }
 }
 sayHi();```
-[FunctionDeclarationsErrorExample01](Ch07/FunctionDeclarationsErrorExample01.htm)
 ========
+[RecursionExample01](Ch07/RecursionExample01.htm)
 ```
 function factorial(num){
     if (num <= 1){
@@ -58,8 +72,8 @@ var anotherFactorial = factorial;
 factorial = null;
 alert(anotherFactorial(4));  //error!
 ```
-[RecursionExample01](Ch07/RecursionExample01.htm)
 ========
+[RecursionExample02](Ch07/RecursionExample02.htm)
 ```
 function factorial(num){
     if (num <= 1){
@@ -72,8 +86,8 @@ var anotherFactorial = factorial;
 factorial = null;
 alert(anotherFactorial(4));  //24
 ```
-[RecursionExample02](Ch07/RecursionExample02.htm)
 ========
+[ClosureExample01](Ch07/ClosureExample01.htm)
 ```
 function createFunctions(){
     var result = new Array();
@@ -92,8 +106,8 @@ for (var i=0; i < funcs.length; i++){
     document.write(funcs[i]() + "<br />");
 }
 ```
-[ClosureExample01](Ch07/ClosureExample01.htm)
 ========
+[ClosureExample02](Ch07/ClosureExample02.htm)
 ```
 function createFunctions(){
     var result = new Array();
@@ -114,8 +128,8 @@ for (var i=0; i < funcs.length; i++){
     document.write(funcs[i]() + "<br />");
 }
 ```
-[ClosureExample02](Ch07/ClosureExample02.htm)
 ========
+[ThisObjectExample01](Ch07/ThisObjectExample01.htm)
 ```
 var name = "The Window";
 var object = {
@@ -128,8 +142,8 @@ var object = {
 };
 alert(object.getNameFunc()());  //"The Window"
 ```
-[ThisObjectExample01](Ch07/ThisObjectExample01.htm)
 ========
+[ThisObjectExample02](Ch07/ThisObjectExample02.htm)
 ```
 var name = "The Window";
 var object = {
@@ -143,8 +157,8 @@ var object = {
 };
 alert(object.getNameFunc()());  //"MyObject"
 ```
-[ThisObjectExample02](Ch07/ThisObjectExample02.htm)
 ========
+[ThisObjectExample03](Ch07/ThisObjectExample03.htm)
 ```
 var name = "The Window";
 var object = {
@@ -157,5 +171,4 @@ alert(object.getName());     //"My Object"
 alert((object.getName)());   //"My Object"
 alert((object.getName = object.getName)());   //"The Window" in non-strict mode
 ```
-[ThisObjectExample03](Ch07/ThisObjectExample03.htm)
 
